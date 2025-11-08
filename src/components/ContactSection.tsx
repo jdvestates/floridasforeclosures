@@ -37,55 +37,62 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          Questions or Inquiries?
-        </h2>
-        <p className="text-center text-xl text-muted-foreground mb-12">Contact Us</p>
+    <section id="contact" className="py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Questions or Inquiries?
+          </h2>
+          <p className="text-xl text-muted-foreground">We're here to help. Reach out anytime.</p>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
-              <CardDescription>Get in touch with us directly</CardDescription>
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl bg-gradient-to-br from-card to-card/80">
+            <CardHeader className="space-y-3">
+              <CardTitle className="text-2xl">Contact Information</CardTitle>
+              <CardDescription className="text-base">Get in touch with us directly</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="font-semibold">Phone</p>
-                  <a href="tel:786-574-0861" className="text-primary hover:underline">
+            <CardContent className="space-y-6">
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors">
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-sm text-muted-foreground mb-1">Phone</p>
+                  <a href="tel:786-574-0861" className="text-lg font-semibold text-primary hover:underline transition-colors">
                     786-574-0861
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="font-semibold">Email</p>
-                  <a href="mailto:verasjoel22@yahoo.com" className="text-primary hover:underline">
-                    verasjoel22@yahoo.com
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors">
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Mail className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-sm text-muted-foreground mb-1">Email</p>
+                  <a href="mailto:verasjoel8@yahoo.com" className="text-lg font-semibold text-primary hover:underline transition-colors break-all">
+                    verasjoel8@yahoo.com
                   </a>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Send us a Message</CardTitle>
-              <CardDescription>Fill out the form below</CardDescription>
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl bg-gradient-to-br from-card to-card/80">
+            <CardHeader className="space-y-3">
+              <CardTitle className="text-2xl">Send us a Message</CardTitle>
+              <CardDescription className="text-base">We'll respond within 24 hours</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <Input
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
+                    className="h-12 rounded-xl"
                   />
                 </div>
                 
@@ -96,6 +103,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
+                    className="h-12 rounded-xl"
                   />
                 </div>
                 
@@ -106,10 +114,11 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
                     required
+                    className="rounded-xl resize-none"
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
+                <Button type="submit" size="lg" className="w-full h-12 rounded-xl text-base font-semibold shadow-md hover:shadow-lg transition-all">
                   Send Message
                 </Button>
               </form>

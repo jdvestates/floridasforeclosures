@@ -11,22 +11,33 @@ interface CountyCardProps {
 
 const CountyCard = ({ name, population, price, onGetList }: CountyCardProps) => {
   return (
-    <Card className="transition-all duration-200 hover:shadow-lg">
-      <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <MapPin className="h-5 w-5 text-primary" />
-          {name} County
+    <Card className="group border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl bg-gradient-to-br from-card to-card/80 overflow-hidden">
+      <CardHeader className="pb-4 bg-gradient-to-br from-primary/5 to-primary/10 group-hover:from-primary/10 group-hover:to-primary/15 transition-colors">
+        <CardTitle className="flex items-center gap-3 text-xl">
+          <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+            <MapPin className="h-5 w-5 text-primary" />
+          </div>
+          <span className="font-bold">{name} County</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pb-3 space-y-2">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Users className="h-4 w-4" />
-          <span>Population: {population.toLocaleString()}</span>
+      <CardContent className="pb-4 pt-6 space-y-4">
+        <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-xl">
+          <Users className="h-5 w-5 text-primary/70" />
+          <div>
+            <p className="text-xs text-muted-foreground font-medium">Population</p>
+            <span className="text-sm font-semibold text-foreground">{population.toLocaleString()}</span>
+          </div>
         </div>
-        <p className="text-2xl font-bold text-primary">${price}</p>
+        <div className="text-center py-2">
+          <p className="text-sm text-muted-foreground mb-1">Price</p>
+          <p className="text-4xl font-bold text-primary">${price}</p>
+        </div>
       </CardContent>
-      <CardFooter>
-        <Button onClick={onGetList} className="w-full">
+      <CardFooter className="pt-0 pb-6">
+        <Button 
+          onClick={onGetList} 
+          className="w-full h-11 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all text-base"
+        >
           Get List
         </Button>
       </CardFooter>

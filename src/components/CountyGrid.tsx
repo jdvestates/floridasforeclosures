@@ -15,13 +15,18 @@ const CountyGrid = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-muted/30">
+    <section className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
-          Available Foreclosure Lists by County
-        </h2>
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Available Foreclosure Lists by County
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Select your county to get comprehensive foreclosure data
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {floridaCountiesData.map((county) => {
             const price = calculatePrice(county.population);
             return (

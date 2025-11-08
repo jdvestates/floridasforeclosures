@@ -45,17 +45,19 @@ const exampleProperties = [
 
 const ForeclosureExamples = () => {
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          Sample Foreclosure List Data
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Here's an example of the detailed information included in our foreclosure lists. 
-          Each property listing contains comprehensive data to help you make informed decisions.
-        </p>
+    <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Sample Foreclosure List Data
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Here's an example of the detailed information included in our foreclosure lists. 
+            Each property listing contains comprehensive data to help you make informed decisions.
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {exampleProperties.map((property, index) => (
             <ForeclosureExample key={index} {...property} />
           ))}
