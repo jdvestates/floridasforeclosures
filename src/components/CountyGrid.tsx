@@ -1,17 +1,6 @@
 import CountyCard from "./CountyCard";
 import { toast } from "sonner";
-
-const floridaCounties = [
-  "Alachua", "Baker", "Bay", "Bradford", "Brevard", "Broward", "Calhoun", "Charlotte",
-  "Citrus", "Clay", "Collier", "Columbia", "DeSoto", "Dixie", "Duval", "Escambia",
-  "Flagler", "Franklin", "Gadsden", "Gilchrist", "Glades", "Gulf", "Hamilton", "Hardee",
-  "Hendry", "Hernando", "Highlands", "Hillsborough", "Holmes", "Indian River", "Jackson",
-  "Jefferson", "Lafayette", "Lake", "Lee", "Leon", "Levy", "Liberty", "Madison", "Manatee",
-  "Marion", "Martin", "Miami-Dade", "Monroe", "Nassau", "Okaloosa", "Okeechobee", "Orange",
-  "Osceola", "Palm Beach", "Pasco", "Pinellas", "Polk", "Putnam", "St. Johns", "St. Lucie",
-  "Santa Rosa", "Sarasota", "Seminole", "Sumter", "Suwannee", "Taylor", "Union", "Volusia",
-  "Wakulla", "Walton", "Washington"
-];
+import { floridaCountiesData, calculatePrice } from "@/utils/countyData";
 
 const CountyGrid = () => {
   const handleGetList = (countyName: string) => {
@@ -33,14 +22,18 @@ const CountyGrid = () => {
         </h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {floridaCounties.map((county) => (
-            <CountyCard
-              key={county}
-              name={county}
-              price="$100-$200"
-              onGetList={() => handleGetList(county)}
-            />
-          ))}
+          {floridaCountiesData.map((county) => {
+            const price = calculatePrice(county.population);
+            return (
+              <CountyCard
+                key={county.name}
+                name={county.name}
+                population={county.population}
+                price={price}
+                onGetList={() => handleGetList(county.name)}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

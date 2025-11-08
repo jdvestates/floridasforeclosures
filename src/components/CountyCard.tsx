@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
+import { MapPin, Users } from "lucide-react";
 
 interface CountyCardProps {
   name: string;
-  price: string;
+  population: number;
+  price: number;
   onGetList: () => void;
 }
 
-const CountyCard = ({ name, price, onGetList }: CountyCardProps) => {
+const CountyCard = ({ name, population, price, onGetList }: CountyCardProps) => {
   return (
     <Card className="transition-all duration-200 hover:shadow-lg">
       <CardHeader className="pb-3">
@@ -17,8 +18,12 @@ const CountyCard = ({ name, price, onGetList }: CountyCardProps) => {
           {name} County
         </CardTitle>
       </CardHeader>
-      <CardContent className="pb-3">
-        <p className="text-2xl font-bold text-primary">{price}</p>
+      <CardContent className="pb-3 space-y-2">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Users className="h-4 w-4" />
+          <span>Population: {population.toLocaleString()}</span>
+        </div>
+        <p className="text-2xl font-bold text-primary">${price}</p>
       </CardContent>
       <CardFooter>
         <Button onClick={onGetList} className="w-full">
