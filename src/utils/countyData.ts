@@ -73,12 +73,13 @@ export const floridaCountiesData: CountyData[] = [
   { name: "Washington", population: 25451 }
 ];
 
+// New discounted pricing - save $25-$50!
 export const calculatePrice = (population: number): number => {
-  if (population < 100000) return 100;
-  if (population < 300000) return 125;
-  if (population < 600000) return 150;
-  if (population < 1000000) return 175;
-  return 200;
+  if (population < 100000) return 75;    // Was $100, save $25
+  if (population < 300000) return 95;    // Was $125, save $30
+  if (population < 600000) return 115;   // Was $150, save $35
+  if (population < 1000000) return 135;  // Was $175, save $40
+  return 150;                            // Was $200, save $50
 };
 
 export const formatPopulation = (population: number): string => {
