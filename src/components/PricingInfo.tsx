@@ -6,7 +6,7 @@ const PricingInfo = () => {
           Affordable Pricing
         </h2>
         <p className="text-center text-primary font-semibold mb-6">
-          🎉 New Lower Prices — Save Up to $50!
+          Quality Data at Unbeatable Prices
         </p>
         <div className="bg-muted/30 rounded-lg p-6 md:p-8">
           <p className="text-lg text-foreground mb-6 text-center">
@@ -16,38 +16,23 @@ const PricingInfo = () => {
           <div className="space-y-3 max-w-2xl mx-auto">
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties under 100,000 population</span>
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground line-through mr-2">$100</span>
-                <span className="text-xl font-bold text-primary">$75</span>
-              </div>
+              <span className="text-xl font-bold text-primary">$20</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties between 100,000 and 300,000</span>
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground line-through mr-2">$125</span>
-                <span className="text-xl font-bold text-primary">$95</span>
-              </div>
+              <span className="text-xl font-bold text-primary">$30</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties between 300,000 and 600,000</span>
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground line-through mr-2">$150</span>
-                <span className="text-xl font-bold text-primary">$115</span>
-              </div>
+              <span className="text-xl font-bold text-primary">$35</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties between 600,000 and 1,000,000</span>
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground line-through mr-2">$175</span>
-                <span className="text-xl font-bold text-primary">$135</span>
-              </div>
+              <span className="text-xl font-bold text-primary">$40</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties over 1,000,000</span>
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground line-through mr-2">$200</span>
-                <span className="text-xl font-bold text-primary">$150</span>
-              </div>
+              <span className="text-xl font-bold text-primary">$50</span>
             </div>
           </div>
           
