@@ -1,6 +1,5 @@
 const PricingInfo = () => {
-  return (
-    <section className="py-12 px-4 bg-background">
+  return <section className="py-12 px-4 bg-background">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-foreground">
           Affordable Pricing
@@ -14,15 +13,7 @@ const PricingInfo = () => {
           </p>
           
           {/* Premium Flexible Option */}
-          <div className="mb-6 p-4 bg-primary/10 border-2 border-primary rounded-lg max-w-2xl mx-auto">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-foreground font-semibold">Flexible Monthly Plan</span>
-              <span className="text-2xl font-bold text-primary">$100/mo</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Pick any county you want, whenever you want. Switch counties month-to-month with complete flexibility.
-            </p>
-          </div>
+          
           
           <p className="text-center text-muted-foreground mb-4 text-sm">— OR —</p>
           
@@ -39,11 +30,11 @@ const PricingInfo = () => {
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties between 300,000 and 600,000</span>
-              <span className="text-xl font-bold text-primary">$35/mo</span>
+              <span className="text-xl font-bold text-primary">$40/mo</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties between 600,000 and 1,000,000</span>
-              <span className="text-xl font-bold text-primary">$40/mo</span>
+              <span className="text-xl font-bold text-primary">$45/mo</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-background rounded">
               <span className="text-muted-foreground">Counties over 1,000,000</span>
@@ -60,8 +51,6 @@ const PricingInfo = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingInfo;
