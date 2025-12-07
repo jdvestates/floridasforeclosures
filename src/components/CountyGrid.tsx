@@ -24,6 +24,9 @@ const CountyGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {floridaCountiesData.map((county) => {
             const price = calculatePrice(county.population);
+            const checkoutUrl = county.name === "Miami-Dade" 
+              ? "https://buy.stripe.com/00w6oJakf0PD7A06om43S01" 
+              : undefined;
             return (
               <CountyCard
                 key={county.name}
@@ -31,6 +34,7 @@ const CountyGrid = () => {
                 population={county.population}
                 price={price}
                 onGetList={() => handleGetList(county.name)}
+                checkoutUrl={checkoutUrl}
               />
             );
           })}
