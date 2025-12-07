@@ -7,9 +7,18 @@ interface CountyCardProps {
   population: number;
   price: number;
   onGetList: () => void;
+  checkoutUrl?: string;
 }
 
-const CountyCard = ({ name, population, price, onGetList }: CountyCardProps) => {
+const CountyCard = ({ name, population, price, onGetList, checkoutUrl }: CountyCardProps) => {
+  const handleClick = () => {
+    if (checkoutUrl) {
+      window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      onGetList();
+    }
+  };
+
   return (
     <Card className="transition-all duration-200 hover:shadow-lg">
       <CardHeader className="pb-3">
@@ -26,7 +35,7 @@ const CountyCard = ({ name, population, price, onGetList }: CountyCardProps) => 
         <p className="text-2xl font-bold text-primary">${price}</p>
       </CardContent>
       <CardFooter>
-        <Button onClick={onGetList} className="w-full">
+        <Button onClick={handleClick} className="w-full">
           Get List
         </Button>
       </CardFooter>
