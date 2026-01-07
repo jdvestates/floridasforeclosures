@@ -72,6 +72,9 @@ const countyCheckoutUrls: Record<string, string> = {
   "Washington": "https://buy.stripe.com/eVq14p63ZgOB8E428643S16",
 };
 
+// Featured counties to display at the top
+const featuredCountyNames = ["Miami-Dade", "Broward"];
+
 const CountyGrid = () => {
   const handleGetList = (countyName: string) => {
     toast.info(`Request for ${countyName} County list`, {
@@ -83,15 +86,58 @@ const CountyGrid = () => {
     }
   };
 
+  // Separate featured counties from the rest
+  const featuredCounties = floridaCountiesData.filter(county => 
+    featuredCountyNames.includes(county.name)
+  );
+  
+  const otherCounties = floridaCountiesData.filter(county => 
+    !featuredCountyNames.includes(county.name)
+  );
+
   return (
     <section className="py-16 px-4 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
           Available Foreclosure Lists by County
         </h2>
-        
+        <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          Select your county below to purchase the foreclosure list. Prices vary based on county population and data volume.
+        </p>
+
+        {/* Featured Counties Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold text-center mb-2 text-primary">
+            Featured Counties
+          </h3>
+          <p className="text-muted-foreground text-center mb-6">
+            Our most popular foreclosure lists
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {featuredCounties.map((county) => {
+              const price = calculatePrice(county.population);
+              const checkoutUrl = countyCheckoutUrls[county.name];
+              return (
+                <CountyCard
+                  key={county.name}
+                  name={county.name}
+                  population={county.population}
+                  price={price}
+                  checkoutUrl={checkoutUrl}
+                  onGetList={() => handleGetList(county.name)}
+                  featured={true}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* All Other Counties */}
+        <h3 className="text-2xl font-semibold text-center mb-6">
+          All Florida Counties
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {floridaCountiesData.map((county) => {
+          {otherCounties.map((county) => {
             const price = calculatePrice(county.population);
             const checkoutUrl = countyCheckoutUrls[county.name];
             return (
@@ -100,11 +146,25 @@ const CountyGrid = () => {
                 name={county.name}
                 population={county.population}
                 price={price}
-                onGetList={() => handleGetList(county.name)}
                 checkoutUrl={checkoutUrl}
+                onGetList={() => handleGetList(county.name)}
               />
             );
           })}
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-12 p-6 bg-muted/50 rounded-lg border border-border">
+          <h4 className="font-semibold text-foreground mb-2">Disclaimer</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            The foreclosure property lists provided are compiled from publicly available records and are intended for informational purposes only. 
+            While we strive to maintain accurate and up-to-date information, we make no warranties or representations regarding the completeness, 
+            accuracy, or reliability of the data provided. Phone numbers included in the lists are sourced from available public records and may not 
+            be 100% accurate or current; we cannot guarantee the validity or reachability of any phone numbers provided. Prices and availability 
+            are subject to change without notice. Users are advised to independently verify all information before making any investment or 
+            purchasing decisions. By purchasing a list, you agree that the seller is not liable for any errors, omissions, or outdated information 
+            contained therein.
+          </p>
         </div>
       </div>
     </section>
