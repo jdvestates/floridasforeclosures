@@ -3,7 +3,7 @@ import ForeclosureExample from "./ForeclosureExample";
 const previewProperties = [
   {
     propertyAddress: "1350 NW 171st St, Miami Gardens, FL 33169",
-    ownerName: "Lewis Hinch, (786-000-0000)",
+    ownerName: "Lewis Hinch",
     mailingAddress: "1350 Nw 171St St Miami FL 33169-5215",
     finalJudgement: "$197,127.02",
     rvm: "$576,030.00",
