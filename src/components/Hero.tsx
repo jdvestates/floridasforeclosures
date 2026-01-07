@@ -14,7 +14,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl leading-relaxed opacity-95">
             We offer foreclosure property lists for all Florida counties. Our lists include owner names, 
             auction dates, listing numbers (if available), mailing addresses, property addresses, market 
-            values, judgment values (amount owed), and phone numbers when available. Each county list ranges from <span className="font-semibold">$20-$50</span> depending on population and data size.
+            values, judgment values (amount owed), and phone numbers when available. Each county list ranges from <span className="font-semibold">$20-$50</span> monthly subscription, depending on population and data size. Foreclosure lists are sent out on the 7th of every month.
           </p>
         </div>
       </div>
