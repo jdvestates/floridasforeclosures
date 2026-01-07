@@ -1,8 +1,6 @@
 import { Building2 } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-12 px-4">
+  return <footer className="bg-primary text-primary-foreground py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center text-center space-y-4">
           <div className="flex items-center gap-2">
@@ -17,9 +15,7 @@ const Footer = () => {
           
           <div className="pt-6 border-t border-primary-foreground/20 max-w-3xl">
             <p className="text-sm opacity-80">
-              <strong>Disclaimer:</strong> The data provided in our foreclosure lists is updated regularly 
-              but is not guaranteed to be 100% accurate or current. We recommend verifying all information 
-              independently before making any decisions.
+              <strong>Disclaimer:</strong> The data provided in our foreclosure lists is updated regularly but is not guaranteed to be 100% accurate or current. We recommend verifying all information independently before making any decisions. All lists are sent via Excel.           
             </p>
           </div>
           
@@ -28,8 +24,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
