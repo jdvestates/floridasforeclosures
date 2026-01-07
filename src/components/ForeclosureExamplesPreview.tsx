@@ -9,7 +9,8 @@ const previewProperties = [
     rvm: "$576,030.00",
     auctionDate: "10/1/25",
     parcelId: "34-2111-011-1220",
-    listingNumber: "N/A"
+    listingNumber: "N/A",
+    phoneNumber: "(305) 555-1234"
   },
   {
     propertyAddress: "355 NE 31st Ave, Homestead, FL 33033",

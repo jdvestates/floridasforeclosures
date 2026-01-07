@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Home, DollarSign, FileText, User, MapPin, Calendar, Hash } from "lucide-react";
+import { Home, DollarSign, FileText, User, MapPin, Calendar, Hash, Phone } from "lucide-react";
 
 interface ForeclosureExampleProps {
   propertyAddress: string;
@@ -10,6 +10,7 @@ interface ForeclosureExampleProps {
   auctionDate: string;
   parcelId: string;
   listingNumber?: string;
+  phoneNumber?: string;
 }
 
 const ForeclosureExample = ({ 
@@ -20,7 +21,8 @@ const ForeclosureExample = ({
   rvm,
   auctionDate,
   parcelId,
-  listingNumber
+  listingNumber,
+  phoneNumber
 }: ForeclosureExampleProps) => {
   return (
     <Card className="transition-all duration-200 hover:shadow-lg">
@@ -89,6 +91,16 @@ const ForeclosureExample = ({
               </div>
             </div>
           </div>
+
+          {phoneNumber && (
+            <div className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+              <div className="flex-1">
+                <p className="font-semibold text-sm text-muted-foreground">Phone Number</p>
+                <p className="text-foreground">{phoneNumber}</p>
+              </div>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
