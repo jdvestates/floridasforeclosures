@@ -1,6 +1,6 @@
 import ForeclosureExample from "./ForeclosureExample";
 
-const exampleProperties = [
+const previewProperties = [
   {
     propertyAddress: "1350 NW 171st St, Miami Gardens, FL 33169",
     ownerName: "Lewis Hinch",
@@ -20,30 +20,10 @@ const exampleProperties = [
     auctionDate: "10/6/25",
     parcelId: "10-7916-006-0660",
     listingNumber: "N/A"
-  },
-  {
-    propertyAddress: "1118 Ferdinand St, Coral Gables, FL 33134",
-    ownerName: "Victoria Brieant",
-    mailingAddress: "1118 Ferdinand St Coral Gables FL 33134-2137",
-    finalJudgement: "$815,618.05",
-    rvm: "$1,749,000.00",
-    auctionDate: "10/6/25",
-    parcelId: "03-4107-018-8070",
-    listingNumber: "F10494621"
-  },
-  {
-    propertyAddress: "10035 SW 141st Ct, Miami, FL 33186",
-    ownerName: "Ana Maria Lopez",
-    mailingAddress: "10035 Sw 141St Ct Miami FL 33186-6803",
-    finalJudgement: "$212,263.73",
-    rvm: "$593,480.00",
-    auctionDate: "10/6/25",
-    parcelId: "30-5903-010-0870",
-    listingNumber: "N/A"
   }
 ];
 
-const ForeclosureExamples = () => {
+const ForeclosureExamplesPreview = () => {
   return (
     <section className="py-16 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
@@ -56,7 +36,7 @@ const ForeclosureExamples = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {exampleProperties.map((property, index) => (
+          {previewProperties.map((property, index) => (
             <ForeclosureExample key={index} {...property} />
           ))}
         </div>
@@ -65,4 +45,4 @@ const ForeclosureExamples = () => {
   );
 };
 
-export default ForeclosureExamples;
+export default ForeclosureExamplesPreview;
