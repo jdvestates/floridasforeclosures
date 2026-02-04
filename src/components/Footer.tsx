@@ -13,8 +13,8 @@ const Footer = () => {
             <p>Email: <a href="mailto:verasjoel22@yahoo.com" className="hover:underline font-semibold">verasjoel22@yahoo.com</a></p>
           </div>
           
-          <p className="text-xs opacity-80 pt-4 max-w-2xl">
-            <strong>Disclaimer:</strong> Data is for informational purposes only. Verify all information independently before making decisions. All lists are sent via Excel.
+          <p className="text-xs opacity-60 pt-6 max-w-2xl font-normal">
+            Disclaimer: Data is compiled from public records and third-party sources and is provided for informational purposes only. Information may change and should be independently verified.
           </p>
           
           <p className="text-sm opacity-70 pt-4">
