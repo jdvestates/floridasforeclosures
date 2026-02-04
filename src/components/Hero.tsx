@@ -11,7 +11,8 @@ const Hero = () => {
           <h2 className="text-2xl md:text-3xl font-semibold mb-6">
             What We Do
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed opacity-95">We offer foreclosure property lists for all Florida counties. Our lists include owner names, auction dates, listing numbers (if available), mailing addresses, property addresses, market values, judgment values (amount owed), and phone numbers when available. $20-$50 monthly subscription, depending on population and data size. Foreclosure lists are sent out on the 2nd of every month.<span className="font-semibold">$20-$50</span> monthly subscription, depending on population and data size. Foreclosure lists are sent out on the 7th of every month.
+          <p className="text-lg md:text-xl leading-relaxed opacity-95">
+            We offer foreclosure property lists for all Florida counties. Our lists include owner names, auction dates, listing numbers (if available), mailing addresses, property addresses, market values, judgment values (amount owed), and phone numbers when available. <span className="font-semibold">$20-$50</span> monthly subscription, depending on population and data size. Lists are released on the last day of the month for the next month.
           </p>
         </div>
       </div>

@@ -116,6 +116,12 @@ const ContactSection = () => {
             </CardContent>
           </Card>
         </div>
+        
+        <div className="mt-8 pt-6 border-t border-border max-w-3xl mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            <strong>Disclaimer:</strong> The data provided in our foreclosure lists is updated regularly but is not guaranteed to be 100% accurate or current. We recommend verifying all information independently before making any decisions. All lists are sent via Excel.
+          </p>
+        </div>
       </div>
     </section>
   );
