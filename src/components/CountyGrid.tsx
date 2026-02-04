@@ -152,20 +152,6 @@ const CountyGrid = () => {
             );
           })}
         </div>
-
-        {/* Disclaimer */}
-        <div className="mt-12 p-6 bg-muted/50 rounded-lg border border-border">
-          <h4 className="font-semibold text-foreground mb-2">Disclaimer</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            The foreclosure property lists provided are compiled from publicly available records and are intended for informational purposes only. 
-            While we strive to maintain accurate and up-to-date information, we make no warranties or representations regarding the completeness, 
-            accuracy, or reliability of the data provided. Phone numbers included in the lists are sourced from available public records and may not 
-            be 100% accurate or current; we cannot guarantee the validity or reachability of any phone numbers provided. Prices and availability 
-            are subject to change without notice. Users are advised to independently verify all information before making any investment or 
-            purchasing decisions. By purchasing a list, you agree that the seller is not liable for any errors, omissions, or outdated information 
-            contained therein.
-          </p>
-        </div>
       </div>
     </section>
   );
