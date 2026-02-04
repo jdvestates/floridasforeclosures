@@ -13,12 +13,6 @@ const Footer = () => {
             <p>Email: <a href="mailto:verasjoel22@yahoo.com" className="hover:underline font-semibold">verasjoel22@yahoo.com</a></p>
           </div>
           
-          <div className="pt-6 border-t border-primary-foreground/20 max-w-3xl">
-            <p className="text-sm opacity-80">
-              <strong>Disclaimer:</strong> The data provided in our foreclosure lists is updated regularly but is not guaranteed to be 100% accurate or current. We recommend verifying all information independently before making any decisions. All lists are sent via Excel.           
-            </p>
-          </div>
-          
           <p className="text-sm opacity-70 pt-4">
             © {new Date().getFullYear()} Florida Foreclosures. All rights reserved.
           </p>
