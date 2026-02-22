@@ -9,9 +9,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      <ForeclosureExamplesPreview />
-      <CountyGrid />
       <PricingInfo />
+      <CountyGrid />
+      <ForeclosureExamplesPreview />
       <ContactSection />
       <Footer />
     </div>
