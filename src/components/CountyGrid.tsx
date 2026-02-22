@@ -86,13 +86,8 @@ const CountyGrid = () => {
     }
   };
 
-  // Separate featured counties from the rest
-  const featuredCounties = floridaCountiesData.filter(county => 
+  const displayedCounties = floridaCountiesData.filter(county => 
     featuredCountyNames.includes(county.name)
-  );
-  
-  const otherCounties = floridaCountiesData.filter(county => 
-    !featuredCountyNames.includes(county.name)
   );
 
   return (
@@ -102,42 +97,11 @@ const CountyGrid = () => {
           Available Foreclosure Lists by County
         </h2>
         <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Select your county below to purchase the foreclosure list. Prices vary based on county population and data volume.
+          Select your county below to purchase the foreclosure list.
         </p>
 
-        {/* Featured Counties Section */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-center mb-2 text-primary">
-            Featured Counties
-          </h3>
-          <p className="text-muted-foreground text-center mb-6">
-            Our most popular foreclosure lists
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {featuredCounties.map((county) => {
-              const price = calculatePrice(county.population);
-              const checkoutUrl = countyCheckoutUrls[county.name];
-              return (
-                <CountyCard
-                  key={county.name}
-                  name={county.name}
-                  population={county.population}
-                  price={price}
-                  checkoutUrl={checkoutUrl}
-                  onGetList={() => handleGetList(county.name)}
-                  featured={true}
-                />
-              );
-            })}
-          </div>
-        </div>
-
-        {/* All Other Counties */}
-        <h3 className="text-2xl font-semibold text-center mb-6">
-          All Florida Counties
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {otherCounties.map((county) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {displayedCounties.map((county) => {
             const price = calculatePrice(county.population);
             const checkoutUrl = countyCheckoutUrls[county.name];
             return (
@@ -148,6 +112,7 @@ const CountyGrid = () => {
                 price={price}
                 checkoutUrl={checkoutUrl}
                 onGetList={() => handleGetList(county.name)}
+                featured={true}
               />
             );
           })}
