@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
           
           <p className="text-xs opacity-60 pt-6 max-w-2xl font-normal">
-            Disclaimer: Data is compiled from public records and third-party sources and is provided for informational purposes only. Information may change and should be independently verified.
+            Disclaimer: Data is compiled from public records and third-party sources and is provided for informational purposes only. Information may change and should be independently verified. Subscribers must follow the Do Not Call list. Subscriptions are non-refundable but can be canceled at any time.
           </p>
           
           <p className="text-sm opacity-70 pt-4">
